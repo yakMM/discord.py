@@ -60,6 +60,7 @@ import re
 import sys
 import types
 import warnings
+from dataclasses import dataclass
 
 from .errors import InvalidArgument
 
@@ -89,6 +90,7 @@ __all__ = (
 DISCORD_EPOCH = 1420070400000
 
 
+@dataclass(frozen=True)
 class _MissingSentinel:
     def __eq__(self, other):
         return False
